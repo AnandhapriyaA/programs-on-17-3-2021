@@ -1,0 +1,24 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) throws ParseException {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter date");
+		String date1 = scan.nextLine();
+		getDayOfWeek(date1);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static String getDayOfWeek(String date1) throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("EEEEE");
+		Date date = sdf.parse(date1);
+		String result = sdf1.format(date);
+		System.out.println(result.toLowerCase());
+		return result.toLowerCase();
+	}
+}

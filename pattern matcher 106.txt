@@ -1,0 +1,25 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter string");
+		String string = scan.nextLine();
+		CheckID(string);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static boolean CheckID(String string) {
+		Pattern pattern = Pattern.compile("[C][P][T][-][0-9]{6}");
+		Matcher match = pattern.matcher(string);
+		boolean result = match.matches();
+		if (result == true)
+			System.out.println("TRUE");
+		else
+			System.out.println("FALSE");
+		return result;
+	}
+}

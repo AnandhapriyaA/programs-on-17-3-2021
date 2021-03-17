@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter string");
+		String string = scan.nextLine();
+		System.out.println("enter no. of times");
+		int number = scan.nextInt();
+		repeatFirstThreeCharacters(string, number);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static String repeatFirstThreeCharacters(String string, int number) {
+		StringBuilder sb = new StringBuilder();
+		if (string.length() > 3)
+			for (int i = 0; i < 3; i++)
+				sb.append(string.charAt(i));
+		else
+			sb.append(string);
+		for (int i = 0; i < number; i++)
+			System.out.print(sb.toString());
+
+		return sb.toString();
+	}
+}

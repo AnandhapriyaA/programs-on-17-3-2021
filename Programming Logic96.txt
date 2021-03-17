@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter 3 integers");
+		int int1 = scan.nextInt();
+		int int2 = scan.nextInt();
+		int int3 = scan.nextInt();
+		getLuckySum(int1, int2, int3);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static int getLuckySum(int int1, int int2, int int3) {
+		int sum = 0;
+		if (int1 == 13)
+			sum = int2 + int3;
+		else if (int2 == 13)
+			sum = int1 + int3;
+		else if (int3 == 13)
+			sum = int2 + int3;
+		else
+			sum = int1 + int2 + int3;
+		System.out.println(sum);
+		return sum;
+	}
+}

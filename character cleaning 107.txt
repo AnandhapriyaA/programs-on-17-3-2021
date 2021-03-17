@@ -1,0 +1,26 @@
+
+import java.text.ParseException;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) throws ParseException {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter string");
+		String string = scan.nextLine();
+		System.out.println("enter character to remove");
+		String str = scan.nextLine();
+		char character = str.charAt(0);
+		removeCharacter(string, character);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static String removeCharacter(String string, char str) throws ParseException {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < string.length(); i++)
+			if (string.charAt(i) != str)
+				sb.append(string.charAt(i));
+		System.out.println(sb.toString());
+		return sb.toString();
+	}
+}

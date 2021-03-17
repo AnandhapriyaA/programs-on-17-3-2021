@@ -1,0 +1,25 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter email");
+		String email = scan.nextLine();
+		ValidateEmail(email);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static boolean ValidateEmail(String email) {
+		Pattern pattern = Pattern.compile("[a-z]{3,}[@][a-z]{5,}[.][c][o][m]");
+		Matcher match = pattern.matcher(email);
+		boolean result = match.matches();
+		if (result == true)
+			System.out.println("TRUE");
+		else
+			System.out.println("FALSE");
+		return result;
+	}
+}

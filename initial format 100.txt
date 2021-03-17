@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter name");
+		String name = scan.nextLine();
+		nameFormatter(name);
+		scan.close();
+	}
+}
+class UserMainCode {
+	static String nameFormatter(String name) {
+		String[] result = name.split(" ");
+		System.out.print(result[1] + ", " + result[0].charAt(0));
+		return name;
+	}
+}
